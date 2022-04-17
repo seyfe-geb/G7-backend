@@ -4,10 +4,11 @@ import lombok.RequiredArgsConstructor;
 import net.waa.g7backend.user.dto.UserDto;
 import net.waa.g7backend.user.model.User;
 import net.waa.g7backend.user.repository.UserRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -15,16 +16,19 @@ import java.util.Optional;
 public class UserServiceImpl implements UserService{
 
     private final UserRepository repository;
+    private final ModelMapper modelMapper;
 
 
     @Override
     public List<UserDto> findAll() {
-        return repository.findAll();
+        return repository.findAll().stream()
+                .map(u -> modelMapper.map(u, UserDto.class))
+                .collect(Collectors.toList());
     }
 
     @Override
     public UserDto findById(long id) {
-        return repository.findById(id);
+        return modelMapper.map(repository.findById(id).orElse(null), UserDto.class);
     }
 
     @Override
@@ -34,7 +38,18 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public UserDto updateById(long id, UserDto dto) {
-        return null;
+        User user = repository.getById(id);
+
+//        if(!dto.getEmail().isEmpty())
+//            user.setEmail(dto.getEmail());
+//
+//        if(!dto.getFname().isEmpty())
+//            user.setFname(dto.getFname());
+//
+//        if(!dto.getLname().isEmpty())
+//            user.setLname(dto.getLname());
+
+        return modelMapper.map(repository.save(user), UserDto.class);
     }
 
     @Override
@@ -52,13 +67,5 @@ public class UserServiceImpl implements UserService{
         return null;
     }
 
-    @Override
-    public boolean existsByUsername(String username) {
-        return repository.existsByUsername(username);
-    }
 
-    @Override
-    public UserDto approveById(long id) {
-        return null;
-    }
 }

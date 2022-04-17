@@ -11,12 +11,4 @@ import java.util.Optional;
 @Repository
 public interface UserRepository extends JpaRepository<User,Long> {
 
-    List<UserDto> findAll();
-    Optional<User> findByUsername(String username);
-    UserDto update(long id, UserDto userDto);
-    boolean existsByUsername(String username);
-
-    boolean existsByEmail(String email);
-
-
 }
