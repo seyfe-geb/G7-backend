@@ -12,8 +12,14 @@ public class G7BackendApplication {
         SpringApplication.run(G7BackendApplication.class, args);
     }
 
+// <<<<<<< sub-project2
+//     @Bean
+//     public ModelMapper modelMapper() {
+// =======
+
     @Bean
-    public ModelMapper modelMapper() {
+    public ModelMapper modelMapper(){
+//>>>>>>> master
         return new ModelMapper();
     }
 
