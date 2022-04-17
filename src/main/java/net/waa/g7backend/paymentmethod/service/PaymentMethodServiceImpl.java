@@ -15,8 +15,9 @@ public class PaymentMethodServiceImpl implements PaymentMethodService{
 
     @Autowired
     private PaymentMethodRepository paymentMethodRepository;
-
+    @Autowired
     private  ModelMapper modelMapper;
+
     @Override
     public List<PaymentMethodDto> findAll() {
         return null;
@@ -39,6 +40,6 @@ public class PaymentMethodServiceImpl implements PaymentMethodService{
 
     @Override
     public void deleteById(long id) {
-
+      paymentMethodRepository.deleteById(id);
     }
 }
