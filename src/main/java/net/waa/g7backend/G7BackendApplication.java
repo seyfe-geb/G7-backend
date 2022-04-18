@@ -1,7 +1,6 @@
 package net.waa.g7backend;
 
-import net.waa.g7backend.product.model.Product;
-import net.waa.g7backend.product.repository.ProductRepository;
+
 import net.waa.g7backend.role.model.Role;
 import net.waa.g7backend.role.repository.RoleRepository;
 import net.waa.g7backend.user.model.User;
@@ -33,7 +32,7 @@ public class G7BackendApplication {
                                  //ProductRepository productRepository){
         return (args -> {
             roleData(roleRepository);
-//            userData(userRepository);
+            userData(userRepository);
 //            productData(productRepository);
         });
     }
@@ -45,23 +44,23 @@ public class G7BackendApplication {
         roleRepository.save(new Role("SELLER"));
     }
 
-//    public void userData(UserRepository userRepository){
-//        userRepository.save(new User("Fridom", "Araya",
-//                "fri@ar.com", "frid",
-//                "123", true, false, LocalDate.now(), LocalDate.now()));
-//        userRepository.save(new User("Ermias", "Ghebre",
-//                "erm@gebr.com", "ermiji",
-//                "123", true, false, LocalDate.now(), LocalDate.now()));
-//        userRepository.save(new User("Star", "Tsegay",
-//                "star@tseg.com", "start",
-//                "123", true, false, LocalDate.now(), LocalDate.now()));
-//        userRepository.save(new User("Esei", "Kahsay",
-//                "ess@kah.com", "essk",
-//                "123", true, false, LocalDate.now(), LocalDate.now()));
-//        userRepository.save(new User("Seyfe", "Gebriel",
-//                "sey@geb.com", "seyg",
-//                "123", true, false, LocalDate.now(), LocalDate.now()));
-//    }
+    public void userData(UserRepository userRepository){
+        userRepository.save(new User("Fridom", "Araya",
+                "fri@ar.com", "free",
+                "123", true, false, LocalDate.now(), LocalDate.now()));
+        userRepository.save(new User("Ermias", "Ghebre",
+                "erm@gebr.com", "ermiji",
+                "123", true, false, LocalDate.now(), LocalDate.now()));
+        userRepository.save(new User("Star", "Tsegay",
+                "star@tseg.com", "start",
+                "123", true, false, LocalDate.now(), LocalDate.now()));
+        userRepository.save(new User("Esei", "Kahsay",
+                "ess@kah.com", "essk",
+                "123", true, false, LocalDate.now(), LocalDate.now()));
+        userRepository.save(new User("Seyfe", "Gebriel",
+                "sey@geb.com", "seyg",
+                "123", true, false, LocalDate.now(), LocalDate.now()));
+    }
 
 //    public void productData(ProductRepository productRepository){
 //        productRepository.save(new Product());
