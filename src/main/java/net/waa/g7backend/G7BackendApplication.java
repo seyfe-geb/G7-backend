@@ -47,7 +47,7 @@ public class G7BackendApplication {
 
     public void userData(UserRepository userRepository){
         userRepository.save(new User("Fridom", "Araya",
-                "fri@ar.com", "frid",
+                "fri@ar.com", "free",
                 "123", true, false, LocalDate.now(), LocalDate.now()));
         userRepository.save(new User("Ermias", "Ghebre",
                 "erm@gebr.com", "ermiji",

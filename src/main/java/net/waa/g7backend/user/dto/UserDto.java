@@ -21,8 +21,8 @@ public class UserDto {
 
     private String password;
 
-//    private Set<Address> addresses;
-//
-//    private Set<Role> authorities;
+    private Set<Address> addresses;
+
+    private Set<Role> authorities;
 
 }
