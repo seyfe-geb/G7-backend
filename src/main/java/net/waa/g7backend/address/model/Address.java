@@ -6,8 +6,7 @@ import net.waa.g7backend.user.model.User;
 
 import javax.persistence.*;
 
-@AllArgsConstructor
-@NoArgsConstructor
+@RequiredArgsConstructor
 @Entity
 @Table(name = "addresses")
 @Data
@@ -31,4 +30,12 @@ public class Address {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
+
+    public Address(String street, String city, String state, String zipCode, AddressType type) {
+        this.street = street;
+        this.city = city;
+        this.state = state;
+        this.zipCode = zipCode;
+        this.type = type;
+    }
 }

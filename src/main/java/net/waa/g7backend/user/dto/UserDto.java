@@ -2,6 +2,7 @@ package net.waa.g7backend.user.dto;
 
 
 import lombok.*;
+import net.waa.g7backend.address.dto.AddressDto;
 import net.waa.g7backend.address.model.Address;
 import net.waa.g7backend.role.model.Role;
 
@@ -21,8 +22,8 @@ public class UserDto {
 
     private String password;
 
-//    private Set<Address> addresses;
-//
-//    private Set<Role> authorities;
+//    private Set<AddressDto> addresses;
+
+    private Set<String> authorities;
 
 }

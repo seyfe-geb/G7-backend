@@ -12,16 +12,15 @@ import net.waa.g7backend.user.model.User;
 @NoArgsConstructor
 
 public class AddressDto {
-    private long id;
-
     private String street;
 
     private String city;
 
     private String state;
     private String zipCode;
-    private AddressType type;
-    @JsonBackReference
-    private User user;
+
+    private String type;
+
+    private long userId;
 
 }

@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.xml.bind.ValidationException;
 import java.util.List;
 
-@Controller
-@RequestMapping("/api/v1/products")
+@RestController
+@RequestMapping(path = "/api/v1/products")
 @RequiredArgsConstructor
 public class ProductController {
     private final ProductService productService;

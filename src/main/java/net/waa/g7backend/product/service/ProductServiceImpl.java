@@ -7,7 +7,10 @@ import net.waa.g7backend.order.model.OrderItem;
 import net.waa.g7backend.order.repository.OrderItemRepository;
 import net.waa.g7backend.product.dto.ProductDto;
 import net.waa.g7backend.product.dto.SaveProductDto;
+import net.waa.g7backend.product.model.Product;
 import net.waa.g7backend.product.repository.ProductRepository;
+import net.waa.g7backend.user.model.User;
+import net.waa.g7backend.user.repository.UserRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +25,7 @@ public class ProductServiceImpl implements ProductService{
 
     private final ProductRepository productRepository;
     private final OrderItemRepository orderItemRepository;
+    private final UserRepository userRepository;
     private final ModelMapper modelMapper;
 
 
@@ -44,7 +48,10 @@ public class ProductServiceImpl implements ProductService{
 
     @Override
     public ProductDto add(ProductDto dto) {
-        return null;
+        User user = userRepository.findById(dto.getUserId()).orElse(null);
+        Product product = new Product(dto.getName(), dto.getPrice(), dto.getDescription(), dto.getQuantity(), user);
+        productRepository.save(product);
+        return dto;
     }
 
     @Override

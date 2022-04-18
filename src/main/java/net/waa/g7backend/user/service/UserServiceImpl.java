@@ -1,6 +1,10 @@
 package net.waa.g7backend.user.service;
 
 import lombok.RequiredArgsConstructor;
+import net.waa.g7backend.address.dto.AddressDto;
+import net.waa.g7backend.address.model.Address;
+import net.waa.g7backend.address.model.AddressType;
+import net.waa.g7backend.role.repository.RoleRepository;
 import net.waa.g7backend.user.dto.UserDto;
 import net.waa.g7backend.user.model.User;
 import net.waa.g7backend.user.repository.UserRepository;
@@ -8,7 +12,10 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 
@@ -18,6 +25,7 @@ public class UserServiceImpl implements UserService{
 
     private final UserRepository userRepository;
     private final ModelMapper modelMapper;
+    private final RoleRepository roleRepository;
 
 
     @Override
@@ -34,9 +42,18 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public UserDto add(UserDto dto) {
+
         User user = new User(dto.getFirstName(), dto.getLastName(), dto.getEmail(),
                 dto.getUsername(), dto.getPassword(), true, false, LocalDate.now(), LocalDate.now());
         userRepository.save(user);
+        if (!dto.getAuthorities().isEmpty()) {
+            user.setAuthorities(new HashSet<>(3));
+
+            for (String authority : dto.getAuthorities())
+                user.getAuthorities().add(roleRepository.findByAuthority(authority));
+        }
+
+        user = userRepository.save(user);
         return dto;
     }
 

@@ -14,7 +14,7 @@ public class FollowDto {
 
     private Long id;
 
-    private User follower;
+    private String followerId;
 
-    private User followee;
+    private String followeeId;
 }
