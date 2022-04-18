@@ -4,14 +4,10 @@ package net.waa.g7backend.order.model;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Generated;
 import lombok.NoArgsConstructor;
 import net.waa.g7backend.address.model.Address;
 import net.waa.g7backend.paymentmethod.model.PaymentMethod;
 import net.waa.g7backend.user.model.User;
-import org.hibernate.annotations.GenerationTime;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
 import java.io.Serializable;
