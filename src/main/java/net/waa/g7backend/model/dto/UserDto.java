@@ -22,8 +22,16 @@ public class UserDto {
 
     private String password;
 
-    private Set<Address> addresses;
+//    private Set<Address> addresses;
 
-    private Set<Role> authorities;
+    private Set<String> authorities;
 
+    public UserDto(String firstName, String lastName, String email, String username, String password, Set<String> authorities) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.authorities = authorities;
+    }
 }

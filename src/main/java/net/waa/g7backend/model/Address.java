@@ -2,7 +2,6 @@ package net.waa.g7backend.model;
 
 
 import lombok.*;
-import net.waa.g7backend.user.model.User;
 
 import javax.persistence.*;
 

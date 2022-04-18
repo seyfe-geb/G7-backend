@@ -1,6 +1,8 @@
 package net.waa.g7backend.service.interfaces;
 
-import net.waa.g7backend.review.dto.ReviewDto;
+
+
+import net.waa.g7backend.model.dto.ReviewDto;
 
 import java.util.List;
 

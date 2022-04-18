@@ -1,9 +1,9 @@
 package net.waa.g7backend.service.implementer;
 
 import lombok.RequiredArgsConstructor;
-import net.waa.g7backend.reward.dto.RewardDto;
-import net.waa.g7backend.reward.dto.SaveRewardDto;
-import net.waa.g7backend.reward.model.Reward;
+import net.waa.g7backend.model.Reward;
+import net.waa.g7backend.model.dto.RewardDto;
+import net.waa.g7backend.model.dto.SaveRewardDto;
 import net.waa.g7backend.repository.RewardRepository;
 import net.waa.g7backend.service.interfaces.RewardService;
 import org.modelmapper.ModelMapper;

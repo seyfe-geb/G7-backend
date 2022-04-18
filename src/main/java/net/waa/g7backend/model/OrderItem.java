@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -32,5 +33,5 @@ public class OrderItem implements Serializable {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "order_id", nullable = false)
     @JsonBackReference
-    private Order order;
+    private net.waa.g7backend.order.model.Order order;
 }

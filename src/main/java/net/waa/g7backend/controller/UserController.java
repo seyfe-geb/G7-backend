@@ -2,6 +2,7 @@ package net.waa.g7backend.controller;
 
 
 import lombok.RequiredArgsConstructor;
+import net.waa.g7backend.model.User;
 import net.waa.g7backend.model.dto.UserDto;
 import net.waa.g7backend.service.interfaces.UserService;
 import org.springframework.http.HttpStatus;

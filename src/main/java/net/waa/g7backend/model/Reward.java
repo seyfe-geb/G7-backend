@@ -19,7 +19,7 @@ public class Reward implements Serializable {
 
     @OneToOne()
     @JoinColumn(name = "order_id", nullable = false)
-    private Order order;
+    private net.waa.g7backend.order.model.Order order;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id", nullable = false)

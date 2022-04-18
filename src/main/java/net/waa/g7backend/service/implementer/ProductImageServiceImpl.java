@@ -1,7 +1,8 @@
 package net.waa.g7backend.service.implementer;
 
-import net.waa.g7backend.productimage.dto.ProductImageDto;
-import net.waa.g7backend.productimage.model.ProductImage;
+
+import net.waa.g7backend.model.ProductImage;
+import net.waa.g7backend.model.dto.ProductImageDto;
 import net.waa.g7backend.repository.ProductImageRepository;
 import net.waa.g7backend.service.interfaces.ProductImageService;
 import org.modelmapper.ModelMapper;

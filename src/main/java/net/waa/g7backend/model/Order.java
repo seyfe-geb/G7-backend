@@ -5,9 +5,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import net.waa.g7backend.model.Address;
-import net.waa.g7backend.paymentmethod.model.PaymentMethod;
-import net.waa.g7backend.user.model.User;
+import net.waa.g7backend.model.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
