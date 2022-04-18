@@ -1,7 +1,6 @@
 package net.waa.g7backend.service.interfaces;
 
-
-import net.waa.g7backend.model.dto.FollowDto;
+import net.waa.g7backend.follow.dto.FollowDto;
 
 import javax.xml.bind.ValidationException;
 import java.util.List;

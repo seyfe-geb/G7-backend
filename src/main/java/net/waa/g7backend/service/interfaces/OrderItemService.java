@@ -1,8 +1,7 @@
 package net.waa.g7backend.service.interfaces;
 
-
-import net.waa.g7backend.model.dto.OrderItemDto;
-import net.waa.g7backend.model.dto.SaveOrderItemDto;
+import net.waa.g7backend.order.dto.OrderItemDto;
+import net.waa.g7backend.order.dto.SaveOrderItemDto;
 
 import java.util.List;
 

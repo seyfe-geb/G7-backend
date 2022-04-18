@@ -1,8 +1,8 @@
 package net.waa.g7backend.service.implementer;
 
 import lombok.RequiredArgsConstructor;
-import net.waa.g7backend.model.Review;
-import net.waa.g7backend.model.dto.ReviewDto;
+import net.waa.g7backend.review.dto.ReviewDto;
+import net.waa.g7backend.review.model.Review;
 import net.waa.g7backend.repository.ReviewRepository;
 import net.waa.g7backend.service.interfaces.ReviewService;
 import org.modelmapper.ModelMapper;
