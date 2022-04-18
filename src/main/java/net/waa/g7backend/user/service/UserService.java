@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public interface UserService {
 
-    List<UserDto> findAll();
+    List<User> findAll();
 
     UserDto findById(long id);
 

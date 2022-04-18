@@ -3,12 +3,14 @@ package net.waa.g7backend.user.controller;
 
 import lombok.RequiredArgsConstructor;
 import net.waa.g7backend.user.dto.UserDto;
+import net.waa.g7backend.user.model.User;
 import net.waa.g7backend.user.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping(path = "api/v1/users")
 @RequiredArgsConstructor
@@ -17,7 +19,7 @@ public class UserController {
     private final UserService service;
 
     @GetMapping()
-    public List<UserDto> getAll() {
+    public List<User> getAll() {
         return service.findAll();
     }
 
