@@ -2,10 +2,8 @@ package net.waa.g7backend.product.controller;
 
 import lombok.RequiredArgsConstructor;
 import net.waa.g7backend.product.dto.ProductDto;
-import net.waa.g7backend.product.service.ProductService;
-import net.waa.g7backend.user.dto.UserDto;
+import net.waa.g7backend.service.interfaces.ProductService;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.xml.bind.ValidationException;

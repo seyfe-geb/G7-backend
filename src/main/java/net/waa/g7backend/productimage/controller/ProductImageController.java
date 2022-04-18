@@ -3,7 +3,7 @@ package net.waa.g7backend.productimage.controller;
 import lombok.RequiredArgsConstructor;
 import net.waa.g7backend.productimage.dto.ProductImageDto;
 
-import net.waa.g7backend.productimage.service.ProductImageService;
+import net.waa.g7backend.service.interfaces.ProductImageService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

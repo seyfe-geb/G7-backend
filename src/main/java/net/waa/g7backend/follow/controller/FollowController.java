@@ -2,7 +2,7 @@ package net.waa.g7backend.follow.controller;
 
 import lombok.RequiredArgsConstructor;
 import net.waa.g7backend.follow.dto.FollowDto;
-import net.waa.g7backend.follow.service.FollowService;
+import net.waa.g7backend.service.interfaces.FollowService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 

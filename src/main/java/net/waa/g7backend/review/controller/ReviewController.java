@@ -2,7 +2,7 @@ package net.waa.g7backend.review.controller;
 
 import lombok.RequiredArgsConstructor;
 import net.waa.g7backend.review.dto.ReviewDto;
-import net.waa.g7backend.review.service.ReviewService;
+import net.waa.g7backend.service.interfaces.ReviewService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

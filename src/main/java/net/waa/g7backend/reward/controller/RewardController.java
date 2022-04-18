@@ -3,7 +3,7 @@ package net.waa.g7backend.reward.controller;
 import lombok.RequiredArgsConstructor;
 import net.waa.g7backend.reward.dto.RewardDto;
 import net.waa.g7backend.reward.dto.SaveRewardDto;
-import net.waa.g7backend.reward.service.RewardService;
+import net.waa.g7backend.service.interfaces.RewardService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 

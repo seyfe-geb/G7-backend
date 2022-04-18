@@ -1,11 +1,7 @@
 package net.waa.g7backend.role.controller;
 
 import lombok.RequiredArgsConstructor;
-import net.waa.g7backend.role.dto.RoleDto;
-import net.waa.g7backend.role.service.RoleService;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/roles")

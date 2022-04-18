@@ -2,11 +2,9 @@ package net.waa.g7backend.user.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.sun.istack.NotNull;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
-import net.waa.g7backend.address.model.Address;
+import net.waa.g7backend.model.Address;
 import net.waa.g7backend.role.model.Role;
 
 import javax.persistence.*;

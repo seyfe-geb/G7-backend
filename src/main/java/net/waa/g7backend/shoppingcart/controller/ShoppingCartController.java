@@ -3,9 +3,8 @@ package net.waa.g7backend.shoppingcart.controller;
 import lombok.RequiredArgsConstructor;
 import net.waa.g7backend.shoppingcart.dto.ShoppingCartDto;
 import net.waa.g7backend.shoppingcart.dto.ShoppingCartItemDto;
-import net.waa.g7backend.shoppingcart.service.ShoppingCartService;
+import net.waa.g7backend.service.interfaces.ShoppingCartService;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import net.waa.g7backend.paymentmethod.dto.PaymentMethodDto;
 import net.waa.g7backend.paymentmethod.dto.SavePaymentMethodDto;
-import net.waa.g7backend.paymentmethod.service.PaymentMethodService;
+import net.waa.g7backend.service.interfaces.PaymentMethodService;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

@@ -3,7 +3,7 @@ package net.waa.g7backend.user.controller;
 
 import lombok.RequiredArgsConstructor;
 import net.waa.g7backend.user.dto.UserDto;
-import net.waa.g7backend.user.service.UserService;
+import net.waa.g7backend.service.interfaces.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
