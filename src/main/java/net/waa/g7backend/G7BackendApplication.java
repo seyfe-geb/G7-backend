@@ -1,7 +1,6 @@
 package net.waa.g7backend;
 
-import net.waa.g7backend.product.model.Product;
-import net.waa.g7backend.product.repository.ProductRepository;
+
 import net.waa.g7backend.role.model.Role;
 import net.waa.g7backend.role.repository.RoleRepository;
 import net.waa.g7backend.user.model.User;

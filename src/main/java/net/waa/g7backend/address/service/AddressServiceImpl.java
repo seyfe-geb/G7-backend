@@ -1,8 +1,8 @@
 package net.waa.g7backend.address.service;
 
 import lombok.RequiredArgsConstructor;
-import net.waa.g7backend.address.dto.AddressDto;
-import net.waa.g7backend.address.dto.SaveAddressDto;
+import net.waa.g7backend.model.dto.AddressDto;
+import net.waa.g7backend.model.dto.SaveAddressDto;
 import net.waa.g7backend.address.model.Address;
 import net.waa.g7backend.address.model.AddressType;
 import net.waa.g7backend.address.repository.AddressRepository;

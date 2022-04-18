@@ -1,8 +1,8 @@
-package net.waa.g7backend.address.controller;
+package net.waa.g7backend.controller;
 
 import lombok.RequiredArgsConstructor;
-import net.waa.g7backend.address.dto.AddressDto;
-import net.waa.g7backend.address.dto.SaveAddressDto;
+import net.waa.g7backend.model.dto.AddressDto;
+import net.waa.g7backend.model.dto.SaveAddressDto;
 import net.waa.g7backend.address.service.AddressService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

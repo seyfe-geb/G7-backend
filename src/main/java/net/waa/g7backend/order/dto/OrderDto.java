@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.sun.istack.NotNull;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import net.waa.g7backend.address.dto.AddressDto;
+import net.waa.g7backend.model.dto.AddressDto;
 import net.waa.g7backend.order.model.OrderStatus;
 import net.waa.g7backend.paymentmethod.dto.PaymentMethodDto;
 import net.waa.g7backend.user.dto.UserDto;

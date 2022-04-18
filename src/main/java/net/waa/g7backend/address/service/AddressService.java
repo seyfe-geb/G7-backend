@@ -1,7 +1,7 @@
 package net.waa.g7backend.address.service;
 
-import net.waa.g7backend.address.dto.AddressDto;
-import net.waa.g7backend.address.dto.SaveAddressDto;
+import net.waa.g7backend.model.dto.AddressDto;
+import net.waa.g7backend.model.dto.SaveAddressDto;
 
 import java.util.List;
 
