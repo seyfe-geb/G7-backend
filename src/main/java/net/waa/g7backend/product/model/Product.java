@@ -11,8 +11,7 @@ import java.awt.*;
 import java.io.Serializable;
 import java.util.Set;
 
-@AllArgsConstructor
-@NoArgsConstructor
+@RequiredArgsConstructor
 @Data
 @Entity
 @Table(name = "products")

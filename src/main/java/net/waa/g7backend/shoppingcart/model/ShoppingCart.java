@@ -1,10 +1,7 @@
 package net.waa.g7backend.shoppingcart.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import net.waa.g7backend.user.model.User;
 
 import javax.persistence.*;
@@ -16,8 +13,7 @@ import java.util.Set;
 @Table(name = "shopping_cart")
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
+@Data
 public class ShoppingCart implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

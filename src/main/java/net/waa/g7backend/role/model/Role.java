@@ -11,6 +11,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Data
 public class Role {
+
     public static final String BUYER = "BUYER";
     public static final String SELLER = "SELLER";
     public static final String ADMIN = "ADMIN";

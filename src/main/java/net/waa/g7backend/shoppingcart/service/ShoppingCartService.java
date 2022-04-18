@@ -1,7 +1,23 @@
 package net.waa.g7backend.shoppingcart.service;
 
-import org.springframework.stereotype.Service;
+import net.waa.g7backend.shoppingcart.dto.ShoppingCartDto;
+import net.waa.g7backend.shoppingcart.dto.ShoppingCartItemDto;
+import net.waa.g7backend.shoppingcart.model.ShoppingCart;
 
-@Service
-public class ShoppingCartService {
+import java.util.List;
+
+public interface ShoppingCartService {
+
+    ShoppingCartDto findCart();
+
+    ShoppingCartDto updateCart(ShoppingCartDto dto);
+
+    List<ShoppingCartItemDto> findAllItems();
+    ShoppingCartItemDto findItemById(long id);
+
+    ShoppingCartItemDto addItem(ShoppingCartItemDto dto);
+    ShoppingCartItemDto updateItemById(long id,ShoppingCartItemDto dto);
+
+    void deleteItemById(long id);
+
 }

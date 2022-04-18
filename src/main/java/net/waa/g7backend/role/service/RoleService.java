@@ -7,13 +7,14 @@ import java.util.List;
 
 
 public interface RoleService {
-    public List<RoleDto> findAll();
 
-    public RoleDto findRoleById(long id);
+    List<RoleDto> findAll();
 
-    public RoleDto save(RoleDto dto);
+     RoleDto findRoleById(long id);
 
-    public RoleDto updateRoleById(long id, RoleDto dto);
+    RoleDto save(RoleDto dto);
 
-    public void deleteRoleById(long id);
+    RoleDto updateRoleById(long id, RoleDto dto);
+
+     void deleteRoleById(long id);
 }
