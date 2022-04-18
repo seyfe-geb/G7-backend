@@ -1,7 +1,18 @@
 package net.waa.g7backend.review.service;
 
-import org.springframework.stereotype.Service;
+import net.waa.g7backend.review.dto.ReviewDto;
 
-@Service
-public class ReviewService {
+import java.util.List;
+
+public interface ReviewService {
+
+    List<ReviewDto> findAll();
+
+    ReviewDto findById(long id);
+
+    ReviewDto add(ReviewDto dto);
+
+    void deleteById(long id);
+
+    ReviewDto updateById(long id,ReviewDto dto);
 }
