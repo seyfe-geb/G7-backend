@@ -1,6 +1,7 @@
 package net.waa.g7backend.service.interfaces;
 
 
+import net.waa.g7backend.model.dto.ProductDto;
 import net.waa.g7backend.product.dto.ProductDto;
 import net.waa.g7backend.product.dto.SaveProductDto;
 
