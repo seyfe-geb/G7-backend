@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import net.waa.g7backend.review.dto.ReviewDto;
 import net.waa.g7backend.review.model.Review;
 import net.waa.g7backend.review.repository.ReviewRepository;
+import net.waa.g7backend.user.dto.UserDto;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
@@ -26,8 +27,9 @@ public class ReviewServiceImpl implements ReviewService{
 
     @Override
     public ReviewDto findById(long id) {
-        return null;
+        return modelMapper.map(repository.findById(id).orElse(null), ReviewDto.class);
     }
+
 
     @Override
     public ReviewDto add(ReviewDto dto) {
