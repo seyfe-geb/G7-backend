@@ -44,4 +44,6 @@ public class Product implements Serializable {
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "product")
     @JsonManagedReference
     private Set<Review> reviews;
+
+
 }
