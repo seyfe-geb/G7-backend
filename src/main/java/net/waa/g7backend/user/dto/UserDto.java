@@ -1,20 +1,28 @@
 package net.waa.g7backend.user.dto;
 
-import lombok.*;
 
-import java.util.Date;
+import lombok.*;
+import net.waa.g7backend.address.model.Address;
+import net.waa.g7backend.role.model.Role;
+
 import java.util.Set;
 
-@NoArgsConstructor
-@AllArgsConstructor
 @Data
-public class UserDto {//extends LightUserDto
+@RequiredArgsConstructor
+public class UserDto {
 
-    private Date createdAt;
+    private String firstName;
 
-    private Date modifiedAt;
+    private String lastName;
 
-    private boolean isApprovedSeller;
+    private String email;
 
-//    private Set<RoleDto> authorities;
+    private String username;
+
+    private String password;
+
+//    private Set<Address> addresses;
+//
+//    private Set<Role> authorities;
+
 }

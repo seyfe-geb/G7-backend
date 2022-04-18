@@ -7,6 +7,7 @@ import net.waa.g7backend.user.repository.UserRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -15,30 +16,33 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService{
 
-    private final UserRepository repository;
+    private final UserRepository userRepository;
     private final ModelMapper modelMapper;
 
 
     @Override
     public List<UserDto> findAll() {
-        return repository.findAll().stream()
+        return userRepository.findAll().stream()
                 .map(u -> modelMapper.map(u, UserDto.class))
                 .collect(Collectors.toList());
     }
 
     @Override
     public UserDto findById(long id) {
-        return modelMapper.map(repository.findById(id).orElse(null), UserDto.class);
+        return modelMapper.map(userRepository.findById(id).orElse(null), UserDto.class);
     }
 
     @Override
     public UserDto add(UserDto dto) {
-        return null;
+        User user = new User(dto.getFirstName(), dto.getLastName(), dto.getEmail(),
+                dto.getUsername(), dto.getPassword(), true, false, LocalDate.now(), LocalDate.now());
+        userRepository.save(user);
+        return dto;
     }
 
     @Override
     public UserDto updateById(long id, UserDto dto) {
-        User user = repository.getById(id);
+        User user = userRepository.getById(id);
 
 //        if(!dto.getEmail().isEmpty())
 //            user.setEmail(dto.getEmail());
@@ -49,12 +53,12 @@ public class UserServiceImpl implements UserService{
 //        if(!dto.getLname().isEmpty())
 //            user.setLname(dto.getLname());
 
-        return modelMapper.map(repository.save(user), UserDto.class);
+        return modelMapper.map(userRepository.save(user), UserDto.class);
     }
 
     @Override
     public void deleteById(long id) {
-     repository.deleteById(id);
+     userRepository.deleteById(id);
     }
 
     @Override

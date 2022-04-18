@@ -5,6 +5,7 @@ import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import net.waa.g7backend.address.model.Address;
 import net.waa.g7backend.role.model.Role;
 
@@ -15,22 +16,13 @@ import java.util.Set;
 
 @Entity
 @Table(name = "users")
-@AllArgsConstructor
-@NoArgsConstructor
+@RequiredArgsConstructor
 @Data
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(nullable = false, unique = true)
-    private String username;
-
-    private String password;
-
-    @Column(nullable = false, unique = true)
-    private String email;
 
     @NotNull
     @Column(name="first_name")
@@ -39,6 +31,15 @@ public class User {
     @NotNull
     @Column(name = "last_name")
     private String lastName;
+
+    @Column(nullable = false, unique = true)
+    private String email;
+
+    @Column(nullable = false, unique = true)
+    private String username;
+
+    private String password;
+
 
     private boolean enabled = true;
 
@@ -51,16 +52,32 @@ public class User {
     @Column(name = "modified_at")
     private LocalDate modifiedAt;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
+    @JsonManagedReference
+    private Set<Address> addresses;
+
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(	name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"),
             uniqueConstraints = @UniqueConstraint(columnNames = {"user_id", "role_id"}))
     private Set<Role> authorities = new HashSet<>();
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-    @JsonManagedReference
-    private Set<Address> addresses;
+    public User(String firstName, String lastName,
+                String email, String username,
+                String password, boolean enabled,
+                boolean isApprovedSeller, LocalDate createdAt,
+                LocalDate modifiedAt) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.enabled = enabled;
+        this.isApprovedSeller = isApprovedSeller;
+        this.createdAt = createdAt;
+        this.modifiedAt = modifiedAt;
+    }
 
     public User(String username, String password) {
         this.username = username;

@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import net.waa.g7backend.address.dto.AddressDto;
 import net.waa.g7backend.order.model.OrderStatus;
 import net.waa.g7backend.paymentmethod.dto.PaymentMethodDto;
+import net.waa.g7backend.user.dto.UserDto;
 
 import java.util.Date;
 import java.util.List;
@@ -32,7 +33,7 @@ public class OrderDto {
 
     private PaymentMethodDto paymentMethod;
 
-    private LightUserDto user;
+    private UserDto user;
 
     private String invoiceUri;
 }
