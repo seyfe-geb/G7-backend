@@ -23,5 +23,5 @@ public class SaveProductDto {
     @NotNull
     private int quantity;
 
-    private List<ProductImageDto> images;
+//    private List<ProductImageDto> images;
 }

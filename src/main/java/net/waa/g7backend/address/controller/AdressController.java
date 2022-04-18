@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "user-addresses")
+@RequestMapping(path = "/api/v1/user-addresses")
 @RequiredArgsConstructor
 public class AdressController {
 
@@ -23,7 +23,7 @@ public class AdressController {
     public AddressDto get(@PathVariable("id") long id){return service.findById(id);}
 
     @PostMapping
-    public AddressDto add(@RequestBody SaveAddressDto dto){
+    public AddressDto add(@RequestBody AddressDto dto){
         return service.add(dto);
     }
 

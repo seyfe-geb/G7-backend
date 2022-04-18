@@ -14,9 +14,6 @@ import java.util.List;
 @Data
 @RequiredArgsConstructor
 public class ProductDto {
-
-    private long id;
-
     @NotNull
     @Size(max = 50)
     private String name;
@@ -30,10 +27,10 @@ public class ProductDto {
     @NotNull
     private int quantity;
 
-    private UserDto user;
+    private long userId;
 
-    @JsonManagedReference
-    private List<ProductImageDto> images;
-    @JsonManagedReference
-    private List<ReviewDto> reviews;
+//    @JsonManagedReference
+//    private List<ProductImageDto> images;
+//    @JsonManagedReference
+//    private List<ReviewDto> reviews;
 }

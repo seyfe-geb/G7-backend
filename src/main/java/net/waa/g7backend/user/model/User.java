@@ -64,10 +64,9 @@ public class User {
     private Set<Role> authorities = new HashSet<>();
 
     public User(String firstName, String lastName,
-                String email, String username,
-                String password, boolean enabled,
-                boolean isApprovedSeller, LocalDate createdAt,
-                LocalDate modifiedAt) {
+                String email, String username, String password,
+                boolean enabled, boolean isApprovedSeller,
+                LocalDate createdAt, LocalDate modifiedAt) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;

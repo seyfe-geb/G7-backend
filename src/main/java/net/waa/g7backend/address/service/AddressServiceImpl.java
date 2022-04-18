@@ -4,7 +4,10 @@ import lombok.RequiredArgsConstructor;
 import net.waa.g7backend.address.dto.AddressDto;
 import net.waa.g7backend.address.dto.SaveAddressDto;
 import net.waa.g7backend.address.model.Address;
+import net.waa.g7backend.address.model.AddressType;
 import net.waa.g7backend.address.repository.AddressRepository;
+import net.waa.g7backend.user.model.User;
+import net.waa.g7backend.user.repository.UserRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
@@ -14,36 +17,40 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 public class AddressServiceImpl implements AddressService{
-    private final AddressRepository repository;
+    private final AddressRepository addressRepository;
+    private final UserRepository userRepository;
     private final ModelMapper modelMapper;
 
     @Override
     public List<AddressDto> findAll() {
-        return repository.findAll().stream()
+        return addressRepository.findAll().stream()
                 .map(a -> modelMapper.map(a, AddressDto.class))
                 .collect(Collectors.toList());
     }
 
     @Override
     public AddressDto findById(long id) {
-        return modelMapper.map(repository.findById(id).orElse(null), AddressDto.class);
+        return modelMapper.map(addressRepository.findById(id).orElse(null), AddressDto.class);
     }
 
     @Override
-    public AddressDto add(SaveAddressDto dto) {
-        Address entity = modelMapper.map(dto, Address.class);
-        return modelMapper.map(repository.save(entity), AddressDto.class);
+    public AddressDto add(AddressDto dto) {
+        User user = userRepository.findById(dto.getUserId()).orElse(null);
+        Address entity = new Address(dto.getStreet(), dto.getCity(), dto.getState(),dto.getZipCode(), AddressType.valueOf(dto.getType()));
+        entity.setUser(user);
+        addressRepository.save(entity);
+        return dto;
     }
 
     @Override
     public void deleteById(long id) {
-        repository.deleteById(id);
+        addressRepository.deleteById(id);
     }
 
     @Override
     public AddressDto updateById(long id, SaveAddressDto dto) {
         Address entity = modelMapper.map(dto , Address.class);
         entity.setId(id);
-        return  modelMapper.map(repository.save(entity), AddressDto.class);
+        return  modelMapper.map(addressRepository.save(entity), AddressDto.class);
     }
 }

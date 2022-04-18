@@ -33,7 +33,8 @@ public class UserController {
 
     @PutMapping("/{id}")
     public UserDto update(@PathVariable long id, @RequestBody UserDto dto){
-        return service.updateById(id, dto);
+        return null;
+//        return service.updateById(id, dto);
     }
 
     @DeleteMapping("/{id}")

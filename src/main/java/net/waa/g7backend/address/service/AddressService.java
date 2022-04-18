@@ -8,7 +8,7 @@ import java.util.List;
 public interface AddressService {
     List<AddressDto> findAll();
     AddressDto findById(long id);
-    AddressDto add(SaveAddressDto dto);
+    AddressDto add(AddressDto dto);
     void deleteById(long id);
     AddressDto updateById(long id, SaveAddressDto dto);
 
