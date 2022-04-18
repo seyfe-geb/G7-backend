@@ -1,6 +1,7 @@
 package net.waa.g7backend.paymentmethod.controller;
 
 
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import net.waa.g7backend.paymentmethod.dto.PaymentMethodDto;
 import net.waa.g7backend.paymentmethod.dto.SavePaymentMethodDto;
@@ -14,7 +15,8 @@ import java.util.List;
 @CrossOrigin
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/api/v1")
+@Data
+@RequestMapping("/api/v1/payments")
 public class PaymentMethodController {
 
     private PaymentMethodService paymentMethodService;

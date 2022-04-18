@@ -1,6 +1,8 @@
 package net.waa.g7backend.paymentmethod.service;
 
 
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import net.waa.g7backend.paymentmethod.repository.PaymentMethodRepository;
 import net.waa.g7backend.paymentmethod.dto.PaymentMethodDto;
 import net.waa.g7backend.paymentmethod.dto.SavePaymentMethodDto;
@@ -13,11 +15,13 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@RequiredArgsConstructor
+@Data
 public class PaymentMethodServiceImpl implements PaymentMethodService{
 
-    @Autowired
+
     private PaymentMethodRepository paymentMethodRepository;
-    @Autowired
+
     private  ModelMapper modelMapper;
 
     @Override

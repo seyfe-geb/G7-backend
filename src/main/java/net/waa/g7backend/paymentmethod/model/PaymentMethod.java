@@ -1,9 +1,8 @@
 package net.waa.g7backend.paymentmethod.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import net.waa.g7backend.address.model.Address;
 import net.waa.g7backend.user.model.User;
 
@@ -12,8 +11,7 @@ import javax.persistence.*;
 @Entity
 @Table(name ="payment_methods")
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+@RequiredArgsConstructor
 public class PaymentMethod {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

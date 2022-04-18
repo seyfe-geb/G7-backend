@@ -1,15 +1,13 @@
 package net.waa.g7backend.paymentmethod.dto;
 
 import com.sun.istack.NotNull;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import net.waa.g7backend.paymentmethod.model.PaymentMethodType;
 
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+@RequiredArgsConstructor
 public class SavePaymentMethodDto {
 
     private String name;
