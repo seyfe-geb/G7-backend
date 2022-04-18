@@ -2,9 +2,9 @@ package net.waa.g7backend;
 
 
 import net.waa.g7backend.role.model.Role;
-import net.waa.g7backend.repository.RoleRepository;
+import net.waa.g7backend.role.repository.RoleRepository;
 import net.waa.g7backend.user.model.User;
-import net.waa.g7backend.repository.UserRepository;
+import net.waa.g7backend.user.repository.UserRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
