@@ -1,6 +1,7 @@
 package net.waa.g7backend.repository;
 
-import net.waa.g7backend.productimage.model.ProductImage;
+
+import net.waa.g7backend.model.ProductImage;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

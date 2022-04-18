@@ -1,13 +1,13 @@
 package net.waa.g7backend.service.implementer;
 
 import lombok.RequiredArgsConstructor;
+import net.waa.g7backend.model.User;
 import net.waa.g7backend.model.dto.AddressDto;
 import net.waa.g7backend.model.dto.SaveAddressDto;
 import net.waa.g7backend.model.Address;
 import net.waa.g7backend.model.AddressType;
 import net.waa.g7backend.repository.AddressRepository;
 import net.waa.g7backend.service.interfaces.AddressService;
-import net.waa.g7backend.user.model.User;
 import net.waa.g7backend.repository.UserRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;

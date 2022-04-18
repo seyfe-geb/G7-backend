@@ -1,10 +1,11 @@
 package net.waa.g7backend.service.interfaces;
 
-import net.waa.g7backend.user.dto.UserDto;
-import net.waa.g7backend.user.model.User;
+
+
+import net.waa.g7backend.model.User;
+import net.waa.g7backend.model.dto.UserDto;
 
 import java.util.List;
-import java.util.Optional;
 
 
 public interface UserService {

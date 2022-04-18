@@ -2,8 +2,9 @@ package net.waa.g7backend.service.implementer;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import net.waa.g7backend.order.dto.OrderItemDto;
-import net.waa.g7backend.order.dto.SaveOrderItemDto;
+
+import net.waa.g7backend.model.dto.OrderItemDto;
+import net.waa.g7backend.model.dto.SaveOrderItemDto;
 import net.waa.g7backend.repository.OrderItemRepository;
 import net.waa.g7backend.repository.ProductRepository;
 import net.waa.g7backend.service.interfaces.OrderItemService;

@@ -3,14 +3,17 @@ package net.waa.g7backend.service.implementer;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import net.waa.g7backend.order.model.OrderItem;
+import net.waa.g7backend.model.OrderItem;
+import net.waa.g7backend.model.Product;
+import net.waa.g7backend.model.User;
+import net.waa.g7backend.model.dto.ProductDto;
+import net.waa.g7backend.model.dto.SaveProductDto;
+
 import net.waa.g7backend.repository.OrderItemRepository;
-import net.waa.g7backend.product.dto.ProductDto;
-import net.waa.g7backend.product.dto.SaveProductDto;
-import net.waa.g7backend.product.model.Product;
+
 import net.waa.g7backend.repository.ProductRepository;
 import net.waa.g7backend.service.interfaces.ProductService;
-import net.waa.g7backend.user.model.User;
+
 import net.waa.g7backend.repository.UserRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;

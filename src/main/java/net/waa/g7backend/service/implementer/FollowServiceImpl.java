@@ -1,7 +1,8 @@
 package net.waa.g7backend.service.implementer;
 
 import lombok.RequiredArgsConstructor;
-import net.waa.g7backend.follow.dto.FollowDto;
+
+import net.waa.g7backend.model.dto.FollowDto;
 import net.waa.g7backend.repository.FollowRepository;
 import net.waa.g7backend.service.interfaces.FollowService;
 import org.modelmapper.ModelMapper;

@@ -2,9 +2,9 @@ package net.waa.g7backend.service.implementer;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import net.waa.g7backend.order.dto.OrderDto;
-import net.waa.g7backend.order.dto.SaveOrderDto;
-import net.waa.g7backend.order.model.OrderStatus;
+import net.waa.g7backend.model.OrderStatus;
+import net.waa.g7backend.model.dto.OrderDto;
+import net.waa.g7backend.model.dto.SaveOrderDto;
 import net.waa.g7backend.service.interfaces.OrderService;
 import org.springframework.stereotype.Service;
 

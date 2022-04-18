@@ -1,6 +1,7 @@
 package net.waa.g7backend.repository;
 
-import net.waa.g7backend.follow.model.Follow;
+
+import net.waa.g7backend.model.Follow;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,8 +1,9 @@
 package net.waa.g7backend.service.interfaces;
 
-import net.waa.g7backend.shoppingcart.dto.ShoppingCartDto;
-import net.waa.g7backend.shoppingcart.dto.ShoppingCartItemDto;
-import net.waa.g7backend.shoppingcart.model.ShoppingCart;
+
+
+import net.waa.g7backend.model.dto.ShoppingCartDto;
+import net.waa.g7backend.model.dto.ShoppingCartItemDto;
 
 import java.util.List;
 

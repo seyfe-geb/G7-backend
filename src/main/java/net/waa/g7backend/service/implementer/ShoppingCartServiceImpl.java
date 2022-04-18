@@ -2,9 +2,9 @@ package net.waa.g7backend.service.implementer;
 
 
 import lombok.RequiredArgsConstructor;
+import net.waa.g7backend.model.dto.ShoppingCartDto;
+import net.waa.g7backend.model.dto.ShoppingCartItemDto;
 import net.waa.g7backend.service.interfaces.ShoppingCartService;
-import net.waa.g7backend.shoppingcart.dto.ShoppingCartDto;
-import net.waa.g7backend.shoppingcart.dto.ShoppingCartItemDto;
 import net.waa.g7backend.repository.ShoppingCartRepository;
 
 import org.modelmapper.ModelMapper;

@@ -1,6 +1,7 @@
 package net.waa.g7backend.service.interfaces;
 
-import net.waa.g7backend.role.dto.RoleDto;
+
+import net.waa.g7backend.model.dto.RoleDto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

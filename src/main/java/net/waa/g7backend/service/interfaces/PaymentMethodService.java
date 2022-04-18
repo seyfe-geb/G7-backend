@@ -1,7 +1,9 @@
 package net.waa.g7backend.service.interfaces;
 
-import net.waa.g7backend.paymentmethod.dto.PaymentMethodDto;
-import net.waa.g7backend.paymentmethod.dto.SavePaymentMethodDto;
+
+
+import net.waa.g7backend.model.dto.PaymentMethodDto;
+import net.waa.g7backend.model.dto.SavePaymentMethodDto;
 
 import java.util.List;
 

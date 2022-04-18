@@ -4,8 +4,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.sun.istack.NotNull;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import net.waa.g7backend.model.Address;
-import net.waa.g7backend.role.model.Role;
+
 
 import javax.persistence.*;
 import java.time.LocalDate;
