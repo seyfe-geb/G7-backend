@@ -3,7 +3,8 @@ package net.waa.g7backend.model.dto;
 
 import lombok.*;
 import net.waa.g7backend.model.Address;
-import net.waa.g7backend.role.model.Role;
+import net.waa.g7backend.model.Role;
+
 
 import java.util.Set;
 
