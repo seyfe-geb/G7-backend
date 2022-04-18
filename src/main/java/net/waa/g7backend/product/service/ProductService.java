@@ -1,7 +1,10 @@
 package net.waa.g7backend.product.service;
 
-import org.springframework.stereotype.Service;
 
-@Service
-public class ProductService {
+import net.waa.g7backend.product.dto.ProductDto;
+
+import java.util.List;
+
+public interface ProductService {
+    List<ProductDto> findAll();
 }

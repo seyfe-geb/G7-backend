@@ -1,4 +1,4 @@
-package net.waa.g7backend.order.dto.service;
+package net.waa.g7backend.order.service;
 
 import net.waa.g7backend.order.dto.OrderDto;
 import net.waa.g7backend.order.dto.SaveOrderDto;
