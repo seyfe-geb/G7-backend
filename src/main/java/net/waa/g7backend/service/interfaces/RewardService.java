@@ -1,8 +1,7 @@
 package net.waa.g7backend.service.interfaces;
 
-import net.waa.g7backend.model.dto.RewardDto;
-import net.waa.g7backend.model.dto.SaveRewardDto;
-
+import net.waa.g7backend.reward.dto.RewardDto;
+import net.waa.g7backend.reward.dto.SaveRewardDto;
 
 import java.util.List;
 

@@ -1,9 +1,8 @@
 package net.waa.g7backend.service.interfaces;
 
 
-import net.waa.g7backend.model.dto.ProductDto;
-import net.waa.g7backend.model.dto.SaveProductDto;
-
+import net.waa.g7backend.product.dto.ProductDto;
+import net.waa.g7backend.product.dto.SaveProductDto;
 
 import javax.xml.bind.ValidationException;
 import java.util.List;

@@ -1,7 +1,6 @@
 package net.waa.g7backend.service.interfaces;
 
-import net.waa.g7backend.model.dto.ProductImageDto;
-
+import net.waa.g7backend.productimage.dto.ProductImageDto;
 
 import java.util.List;
 
