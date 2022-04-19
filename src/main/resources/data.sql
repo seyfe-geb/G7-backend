@@ -113,7 +113,13 @@ values (5, 9, '567891', '2022-04-15', 'CREDIT', 5);
 
 --PRODUCTS
 INSERT INTO products (id, description, name, price, quantity, user_id )
-VALUES (1, 'It is a transport mechanism', 'Bicycle', 100.00, 14, 3);
+VALUES (1, 'It is a transport mechanism', 'Bicycle', 100.00, 14, 1);
 
 INSERT INTO products (id, description, name, price, quantity, user_id  )
-VALUES (2, 'stationery writing object', 'Bicycle', 0.50, 5, 4);
+VALUES (2, 'Stationery writing object', 'Pen', 0.50, 5, 2);
+
+INSERT INTO products (id, description, name, price, quantity, user_id  )
+VALUES (3, 'Maximize your travel portability', 'Bag',60, 5, 1);
+
+INSERT INTO products (id, description, name, price, quantity, user_id  )
+VALUES (4, 'Digital camera and cellular phone', 'iPhone', 10, 5, 2);

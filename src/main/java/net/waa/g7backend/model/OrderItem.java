@@ -33,5 +33,5 @@ public class OrderItem implements Serializable {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "order_id", nullable = false)
     @JsonBackReference
-    private net.waa.g7backend.order.model.Order order;
+    private Order order;
 }

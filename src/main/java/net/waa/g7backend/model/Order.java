@@ -1,4 +1,4 @@
-package net.waa.g7backend.order.model;
+package net.waa.g7backend.model;
 
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;

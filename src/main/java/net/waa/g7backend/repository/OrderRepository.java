@@ -1,6 +1,7 @@
 package net.waa.g7backend.repository;
 
-import net.waa.g7backend.order.model.Order;
+
+import net.waa.g7backend.model.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
