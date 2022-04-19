@@ -55,10 +55,9 @@ public class OrderServiceImpl implements OrderService {
         User user = userRepository.findUserShippingAddress(dto.getUserId());
         Set<OrderItem> ois = new HashSet<>();
         if(dto.getProductIds() != null && dto.getProductIds().size() > 0){
-            for(String id : dto.getProductIds().keySet()){
-                Long pid = Long.valueOf(id);
+            for(Long pid : dto.getProductIds().keySet()){
                 Product product = productRepository.getById(pid);
-                ois.add(new OrderItem(dto.getProductIds().get(id), product.getPrice(), product));
+                ois.add(new OrderItem(dto.getProductIds().get(pid), product.getPrice(), product));
             }
 
         }

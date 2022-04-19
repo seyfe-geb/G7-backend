@@ -31,7 +31,7 @@ public class OrderDto {
 
     private String paymentMethod;
 
-    private HashMap<String, Integer> productIds;
+    private HashMap<Long, Integer> productIds;
 
 
 
