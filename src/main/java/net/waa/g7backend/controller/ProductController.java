@@ -1,6 +1,7 @@
 package net.waa.g7backend.controller;
 
 import lombok.RequiredArgsConstructor;
+import net.waa.g7backend.model.Product;
 import net.waa.g7backend.model.dto.ProductDto;
 import net.waa.g7backend.service.interfaces.ProductService;
 import org.springframework.http.HttpStatus;
@@ -12,11 +13,12 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "/api/v1/products")
 @RequiredArgsConstructor
+@CrossOrigin
 public class ProductController {
     private final ProductService productService;
 
     @GetMapping()
-    public List<ProductDto> getAll() {
+    public List<Product> getAll() {
         return productService.findAll();
     }
 

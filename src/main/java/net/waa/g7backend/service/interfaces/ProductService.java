@@ -2,6 +2,7 @@ package net.waa.g7backend.service.interfaces;
 
 
 
+import net.waa.g7backend.model.Product;
 import net.waa.g7backend.model.dto.ProductDto;
 import net.waa.g7backend.model.dto.SaveProductDto;
 
@@ -9,7 +10,7 @@ import javax.xml.bind.ValidationException;
 import java.util.List;
 
 public interface ProductService {
-    List<ProductDto> findAll();
+    List<Product> findAll();
 
     List<ProductDto> findAllByUserId(Long id);
 
