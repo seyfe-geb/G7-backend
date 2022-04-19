@@ -19,12 +19,12 @@ public class ShoppingCartItem {
 
     private int quantity;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "shopping_cart_id", nullable = false)
-    @JsonBackReference
-    private ShoppingCart cart;
-
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id", nullable = false)
     private Product product;
+
+    public ShoppingCartItem(int quantity, Product product) {
+        this.quantity = quantity;
+        this.product = product;
+    }
 }

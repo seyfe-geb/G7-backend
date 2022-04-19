@@ -8,12 +8,7 @@ import lombok.*;
 @Data
 public class ShoppingCartItemDto {
 
-    private long id;
-
-    @JsonBackReference
-    private ShoppingCartDto cart;
-
     private int quantity;
 
-    private ProductDto product;
+    private Long productId;
 }

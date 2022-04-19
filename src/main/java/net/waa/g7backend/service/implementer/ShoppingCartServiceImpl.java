@@ -2,14 +2,21 @@ package net.waa.g7backend.service.implementer;
 
 
 import lombok.RequiredArgsConstructor;
+import net.waa.g7backend.model.Product;
+import net.waa.g7backend.model.ShoppingCart;
+import net.waa.g7backend.model.ShoppingCartItem;
+import net.waa.g7backend.model.User;
 import net.waa.g7backend.model.dto.ShoppingCartDto;
 import net.waa.g7backend.model.dto.ShoppingCartItemDto;
+import net.waa.g7backend.repository.ProductRepository;
+import net.waa.g7backend.repository.UserRepository;
 import net.waa.g7backend.service.interfaces.ShoppingCartService;
 import net.waa.g7backend.repository.ShoppingCartRepository;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.List;
 
 
@@ -17,7 +24,9 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ShoppingCartServiceImpl implements ShoppingCartService {
 
-    private final ShoppingCartRepository repository;
+    private final ShoppingCartRepository shoppingCartRepository;
+    private final ProductRepository productRepository;
+    private final UserRepository userRepository;
     private final ModelMapper modelMapper;
 
 
@@ -53,6 +62,19 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 
     @Override
     public void deleteItemById(long id) {
-         repository.deleteById(id);
+        shoppingCartRepository.deleteById(id);
+    }
+
+    @Override
+    public ShoppingCartDto addShoppingCart(ShoppingCartDto shoppingCartDto) {
+        User user = userRepository.getById(shoppingCartDto.getUserId());
+        ShoppingCart shoppingCart = new ShoppingCart(user, new HashSet<>());
+        for(Long item : shoppingCartDto.getItems().keySet()){
+            Product product = productRepository.getById(item);
+            ShoppingCartItem sci = new ShoppingCartItem(shoppingCartDto.getItems().get(item), product);
+            shoppingCart.getItems().add(sci);
+        }
+        shoppingCartRepository.save(shoppingCart);
+        return shoppingCartDto;
     }
 }

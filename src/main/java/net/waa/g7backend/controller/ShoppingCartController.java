@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 
+@CrossOrigin
 @RestController
-@RequestMapping("api/v1/shoppingcarts")
+@RequestMapping("api/v1/shopping-carts")
 @RequiredArgsConstructor
 public class ShoppingCartController {
 
@@ -30,6 +31,11 @@ public class ShoppingCartController {
     @GetMapping("/item/{id}")
     public ShoppingCartItemDto getItem(@PathVariable long id) {
         return shoppingCartService.findItemById(id);
+    }
+
+    @PostMapping
+    public ShoppingCartDto addShoppingCart(@RequestBody ShoppingCartDto shoppingCartDto){
+        return shoppingCartService.addShoppingCart(shoppingCartDto);
     }
 
     @PostMapping("/item")

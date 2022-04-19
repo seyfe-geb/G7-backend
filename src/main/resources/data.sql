@@ -124,25 +124,25 @@ VALUES (3, 'Maximize your carry', 'Bag',60, 5, 1);
 INSERT INTO products (id, description, name, price, quantity, user_id  )
 VALUES (4, ' cellular phone', 'iPhone', 10, 5, 2);
 
---ShoppingCart
-INSERT INTO shopping_cart (id,user_id)
-values (11,1);
-
-INSERT INTO shopping_cart (id,user_id)
-values (12,2);
-
-INSERT INTO shopping_cart (id,user_id)
-values (13,3);
-
---ShoppingCart Item
-INSERT INTO shopping_cart_items (id, quantity, shopping_cart_id, product_id)
-values (14, 10, 12,1);
+-- -- --ShoppingCart
+-- INSERT INTO shopping_cart (id,user_id)
+-- values (10,3);
 --
-INSERT INTO shopping_cart_items (id, quantity, shopping_cart_id, product_id)
-values (15, 5, 13,2);
-
-INSERT INTO shopping_cart_items (id, quantity, shopping_cart_id, product_id)
-values (16, 2, 11,3);
+-- INSERT INTO shopping_cart (id,user_id)
+-- values (21,4);
+--
+-- INSERT INTO shopping_cart (id,user_id)
+-- values (33,5);
+--
+-- -- --ShoppingCart Item
+-- INSERT INTO shopping_cart_items (id, quantity, shopping_cart_id, product_id)
+-- values (1, 10, 1,1);
+-- --
+-- INSERT INTO shopping_cart_items (id, quantity, shopping_cart_id, product_id)
+-- values (2, 5, 2,2);
+--
+-- INSERT INTO shopping_cart_items (id, quantity, shopping_cart_id, product_id)
+-- values (3, 2, 3,3);
 
 
 

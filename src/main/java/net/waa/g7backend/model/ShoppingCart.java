@@ -22,7 +22,13 @@ public class ShoppingCart implements Serializable {
     @JoinColumn(name = "user_id", nullable = false, unique = true)
     private User user;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "cart")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JsonManagedReference
+    @JoinColumn(name = "shopping_cart_id")
     private Set<ShoppingCartItem> items = new HashSet<>();
+
+    public ShoppingCart(User user, Set<ShoppingCartItem> items) {
+        this.user = user;
+        this.items = items;
+    }
 }

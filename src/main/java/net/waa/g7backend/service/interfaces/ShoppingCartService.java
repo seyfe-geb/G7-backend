@@ -21,4 +21,5 @@ public interface ShoppingCartService {
 
     void deleteItemById(long id);
 
+    ShoppingCartDto addShoppingCart(ShoppingCartDto shoppingCartDto);
 }
