@@ -36,10 +36,10 @@ public class AddressServiceImpl implements AddressService {
 
     @Override
     public AddressDto add(AddressDto dto) {
-        User user = userRepository.findById(dto.getUserId()).orElse(null);
-        Address address = new Address(dto.getStreet(), dto.getCity(), dto.getState(),dto.getZipCode(), AddressType.valueOf(dto.getType()));
-        address.setUser(user);
-        addressRepository.save(address);
+//        User user = userRepository.findById(dto.getUserId()).orElse(null);
+//        Address address = new Address(dto.getStreet(), dto.getCity(), dto.getState(),dto.getZipCode(), AddressType.valueOf(dto.getType()));
+//        address.setUser(user);
+//        addressRepository.save(address);
         return dto;
     }
 

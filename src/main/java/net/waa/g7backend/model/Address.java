@@ -5,7 +5,8 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@RequiredArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "addresses")
 @Data
@@ -25,10 +26,6 @@ public class Address {
     private String zipCode;
 
     private AddressType type = AddressType.NONE;
-
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
 
     public Address(String street, String city, String state, String zipCode, AddressType type) {
         this.street = street;

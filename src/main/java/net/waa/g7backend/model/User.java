@@ -2,7 +2,9 @@ package net.waa.g7backend.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.sun.istack.NotNull;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 
@@ -13,7 +15,9 @@ import java.util.Set;
 
 @Entity
 @Table(name = "users")
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 public class User {
 
@@ -49,8 +53,8 @@ public class User {
     @Column(name = "modified_at")
     private LocalDate modifiedAt;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
-    @JsonManagedReference
+    @OneToMany(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
     private Set<Address> addresses;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)

@@ -1,6 +1,8 @@
 package net.waa.g7backend.service.implementer;
 
 import lombok.RequiredArgsConstructor;
+import net.waa.g7backend.model.Address;
+import net.waa.g7backend.model.AddressType;
 import net.waa.g7backend.model.User;
 import net.waa.g7backend.model.dto.AddressDto;
 import net.waa.g7backend.model.dto.UserDto;
@@ -12,6 +14,7 @@ import net.waa.g7backend.repository.UserRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.List;
@@ -38,6 +41,7 @@ public class UserServiceImpl implements UserService {
         return modelMapper.map(userRepository.findById(id).orElse(null), UserDto.class);
     }
 
+    @Transactional
     @Override
     public UserDto add(UserDto dto) {
        User user = new User(dto.getFirstName(), dto.getLastName(),
@@ -54,10 +58,16 @@ public class UserServiceImpl implements UserService {
 
         userRepository.save(user);
         user = userRepository.findUserByUsername(user.getUsername());
-        for(AddressDto ad : dto.getAddresses()){
-            ad.setUserId(user.getId());
-            addressService.add(ad);
+        if (user.getAddresses() == null) {
+            user.setAddresses(new HashSet<>(2));
+            for(AddressDto ad : dto.getAddresses()){
+//            ad.setUserId(user.getId());
+//            addressService.add(ad);
+                Address address = new Address(ad.getStreet(), ad.getCity(), ad.getState(), ad.getZipCode(), AddressType.valueOf(ad.getType()));
+                user.getAddresses().add(address);
+            }
         }
+
         return dto;
     }
 
