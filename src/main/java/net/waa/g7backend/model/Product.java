@@ -1,5 +1,6 @@
 package net.waa.g7backend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
@@ -31,6 +32,7 @@ public class Product implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
+    @JsonIgnoreProperties(value = {"hibernateLazyInitializer","handler"})
     private User user;
 
     public Product(String name, double price, String description, int quantity, User user) {

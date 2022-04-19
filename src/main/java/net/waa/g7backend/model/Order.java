@@ -9,6 +9,7 @@ import net.waa.g7backend.model.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Set;
 
@@ -26,13 +27,13 @@ public class Order implements Serializable {
     private OrderStatus status = OrderStatus.PENDING;
 
     @Column(name = "created_at")
-    private Date createdAt;
+    private LocalDate createdAt;
 
     @Column(name = "modified_at")
-    private Date modifiedAt;
+    private LocalDate modifiedAt;
 
     @Column(nullable = false)
-    private double price;
+    private double totalPrice;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JsonManagedReference
@@ -40,10 +41,19 @@ public class Order implements Serializable {
     private Set<OrderItem> orderItems;
 
     @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "shipping_address_id", nullable = false)
+    @JoinColumn(name = "shipping_address_id")//, nullable = false)
     private Address shippingAddress;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
+
+    public Order(LocalDate createdAt, LocalDate modifiedAt, double totalPrice, Set<OrderItem> orderItems, Address shippingAddress, User user) {
+        this.createdAt = createdAt;
+        this.modifiedAt = modifiedAt;
+        this.totalPrice = totalPrice;
+        this.orderItems = orderItems;
+        this.shippingAddress = shippingAddress;
+        this.user = user;
+    }
 }

@@ -18,7 +18,7 @@ public interface OrderService {
 
     OrderDto findById(long id);
 
-    OrderDto add(SaveOrderDto dto); //throws ValidationException;
+    Order add(OrderDto dto); //throws ValidationException;
 
     OrderDto changeStatusById(long id, OrderStatus status); // throws ValidationExc
 }
