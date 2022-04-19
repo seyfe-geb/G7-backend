@@ -28,10 +28,10 @@ public class UserDto {
 
     public UserDto(String firstName, String lastName, String email, String username, String password, Set<String> authorities, Set<AddressDto> addresses) {
         this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.username = username;
-        this.password = password;
+        this.lastName =  lastName;
+        this.email =     email;
+        this.username =  username;
+        this.password =  password;
         this.authorities = authorities;
         this.addresses = addresses;
     }
