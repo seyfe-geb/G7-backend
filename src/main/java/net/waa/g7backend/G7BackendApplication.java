@@ -37,9 +37,9 @@ public class G7BackendApplication {
 
 
     public void roleData(RoleService roleService){
-        roleService.save(new Role("ADMIN"));
-        roleService.save(new Role("BUYER"));
-        roleService.save(new Role("SELLER"));
+//        roleService.save(new Role("ADMIN"));
+//        roleService.save(new Role("BUYER"));
+//        roleService.save(new Role("SELLER"));
     }
 
 
