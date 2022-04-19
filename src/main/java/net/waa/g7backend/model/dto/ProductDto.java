@@ -25,7 +25,5 @@ public class ProductDto {
     private long userId;
 
 //    @JsonManagedReference
-//    private List<ProductImageDto> images;
-//    @JsonManagedReference
 //    private List<ReviewDto> reviews;
 }

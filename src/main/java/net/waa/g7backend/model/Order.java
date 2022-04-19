@@ -1,4 +1,4 @@
-package net.waa.g7backend.order.model;
+package net.waa.g7backend.model;
 
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -34,18 +34,14 @@ public class Order implements Serializable {
     @Column(nullable = false)
     private double price;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL,
-            mappedBy = "order", orphanRemoval = true)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JsonManagedReference
+    @JoinColumn(name = "order_id")
     private Set<OrderItem> orderItems;
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "shipping_address_id", nullable = false)
     private Address shippingAddress;
-
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "paymentMethod_id", nullable = false)
-    private PaymentMethod paymentMethod;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id", nullable = false)

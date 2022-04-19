@@ -3,9 +3,12 @@ package net.waa.g7backend.service.implementer;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import net.waa.g7backend.model.OrderStatus;
+import net.waa.g7backend.model.Order;
 import net.waa.g7backend.model.dto.OrderDto;
 import net.waa.g7backend.model.dto.SaveOrderDto;
+import net.waa.g7backend.repository.OrderRepository;
 import net.waa.g7backend.service.interfaces.OrderService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,10 +18,13 @@ import java.util.List;
 @RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
 
+    @Autowired
+    OrderRepository orderRepository;
 
     @Override
-    public List<OrderDto> findAll() {
-        return null;
+    public List<Order> findAll() {
+
+        return orderRepository.findAll();
     }
 
     @Override

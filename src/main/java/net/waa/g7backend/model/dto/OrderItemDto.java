@@ -15,6 +15,4 @@ public class OrderItemDto {
 
     private ProductDto product;
 
-    @JsonBackReference
-    private OrderDto order;
 }

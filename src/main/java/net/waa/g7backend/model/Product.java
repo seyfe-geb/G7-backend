@@ -33,10 +33,6 @@ public class Product implements Serializable {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-//    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "product")
-//    @JsonManagedReference
-//    private Set<ProductImage> images;
-
     public Product(String name, double price, String description, int quantity, User user) {
         this.name = name;
         this.price = price;

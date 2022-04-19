@@ -1,4 +1,4 @@
-package net.waa.g7backend.product.controller;
+package net.waa.g7backend.controller;
 
 import lombok.RequiredArgsConstructor;
 import net.waa.g7backend.model.dto.ProductDto;

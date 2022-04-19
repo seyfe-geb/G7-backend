@@ -63,8 +63,7 @@ public class UserServiceImpl implements UserService {
             for(AddressDto ad : dto.getAddresses()){
 //            ad.setUserId(user.getId());
 //            addressService.add(ad);
-                Address address = new Address(ad.getStreet(), ad.getCity(), ad.getState(), ad.getZipCode(), AddressType.valueOf(ad.getType()));
-                user.getAddresses().add(address);
+                user.getAddresses().add(new Address(ad.getStreet(), ad.getCity(), ad.getState(), ad.getZipCode(), AddressType.valueOf(ad.getType())));
             }
         }
 

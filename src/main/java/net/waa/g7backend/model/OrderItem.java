@@ -30,8 +30,8 @@ public class OrderItem implements Serializable {
     @JoinColumn(name = "product_id", nullable = false)
     private Product product;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "order_id", nullable = false)
-    @JsonBackReference
-    private net.waa.g7backend.order.model.Order order;
+//    @ManyToOne(fetch = FetchType.EAGER)
+//    @JoinColumn(name = "order_id", nullable = false)
+//    @JsonBackReference
+//    private Order order;
 }
