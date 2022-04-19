@@ -9,7 +9,7 @@ INSERT INTO roles (id, authority) VALUES (3, 'BUYER');
 
 --User 1
 INSERT INTO users (id, created_at, email, enabled, first_name, is_approved_seller, last_name, modified_at, password, username)
-VALUES (1, '2022-04-12', 'fri@miu.com', TRUE, 'Fridom', FALSE, 'Araya', '2022-04-12', '123', 'frid');
+VALUES (1, '2022-04-12', 'fri@miu.com', TRUE, 'Fridom', FALSE, 'Araya', '2022-04-12', '123', 'free');
 
 INSERT INTO USER_ROLES(user_id, role_id) VALUES (1, 2);
 
@@ -119,7 +119,7 @@ INSERT INTO products (id, description, name, price, quantity, user_id  )
 VALUES (2, 'Stationery writing object', 'Pen', 0.50, 5, 2);
 
 INSERT INTO products (id, description, name, price, quantity, user_id  )
-VALUES (3, 'Maximize your travel portability', 'Bag',60, 5, 1);
+VALUES (3, 'Maximize your carry', 'Bag',60, 5, 1);
 
 INSERT INTO products (id, description, name, price, quantity, user_id  )
-VALUES (4, 'Digital camera and cellular phone', 'iPhone', 10, 5, 2);
+VALUES (4, ' cellular phone', 'iPhone', 10, 5, 2);
