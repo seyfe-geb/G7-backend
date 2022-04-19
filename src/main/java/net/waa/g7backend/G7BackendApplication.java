@@ -48,23 +48,6 @@ public class G7BackendApplication {
     }
 
     private void addressData(AddressService userService) {
-        AddressDto dto = new AddressDto( "123ST", "FairField", "IA", "123456", "BILLING", 1);
-        userService.add(dto);
-
-        dto = new AddressDto( "234ST", "Uttamwa", "IA", "234567", "BILLING", 2);
-        userService.add(dto);
-
-        dto = new AddressDto( "345ST", "MountPleasant", "IA", "345678", "SHIPPING", 3);
-        userService.add(dto);
-
-        dto = new AddressDto( "456ST", "IowaCity", "IA", "456789", "SHIPPING", 4);
-        userService.add(dto);
-
-        dto = new AddressDto( "567ST", "Des Moins", "IA", "567891", "BILLING", 5);
-        userService.add(dto);
-
-        dto = new AddressDto( "678ST", "Richmond", "IA", "678912", "SHIPPING", 6);
-        userService.add(dto);
     }
 
 

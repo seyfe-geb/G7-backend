@@ -62,4 +62,58 @@ INSERT INTO follows (id, followee_id, follower_id) VALUES (5, 1, 5);
 
 INSERT INTO follows (id, followee_id, follower_id) VALUES (6, 2, 5);
 
+--ADDRESSES
+INSERT INTO addresses (id, city, state, street, type, zip_code, user_id)
+values (1, 'FairField', 'IA', '123ST',   1, '123456', 1);
 
+INSERT INTO addresses (id, city, state, street, type, zip_code, user_id)
+values (2, 'FairField', 'IA', '123ST',   2, '123456', 1);
+
+INSERT INTO addresses (id, city, state, street, type, zip_code, user_id)
+values (3, 'Uttamwa', 'IA', '234ST',   1, '234567', 2);
+
+INSERT INTO addresses (id, city, state, street, type, zip_code, user_id)
+values (4, 'Uttamwa', 'IA', '234ST',   2, '234567', 2);
+
+INSERT INTO addresses (id, city, state, street, type, zip_code, user_id)
+values (5, 'MountPleasant', 'IA', '345ST',   1, '345678', 3);
+
+INSERT INTO addresses (id, city, state, street, type, zip_code, user_id)
+values (6, 'MountPleasant', 'IA', '345ST',   2, '345678', 3);
+
+
+INSERT INTO addresses (id, city, state, street, type, zip_code, user_id)
+values (7, 'Iowa City', 'IA', '456ST',   1, '456789', 4);
+
+INSERT INTO addresses (id, city, state, street, type, zip_code, user_id)
+values (8, 'Iowa City', 'IA', '456ST',   2, '456789', 4);
+
+INSERT INTO addresses (id, city, state, street, type, zip_code, user_id)
+values (9, 'Des Moins', 'IA', '567ST',   1, '567891', 5);
+
+INSERT INTO addresses (id, city, state, street, type, zip_code, user_id)
+values (10, 'Des Moins', 'IA', '567ST',   2, '567891', 5);
+
+--PAYMENT_METHOD
+INSERT INTO payment_method (id, billing_address_id, card_number, created_at, payment_type, user_id)
+values (1, 1, '123456', '2022-04-11', 'CREDIT', 1);
+
+INSERT INTO payment_method (id, billing_address_id, card_number, created_at, payment_type, user_id)
+values (2, 3, '234567', '2022-04-12', 'DEBIT', 2);
+
+INSERT INTO payment_method (id, billing_address_id, card_number, created_at, payment_type, user_id)
+values (3, 5, '345678', '2022-04-13', 'CREDIT', 3);
+
+INSERT INTO payment_method (id, billing_address_id, card_number, created_at, payment_type, user_id)
+values (4, 7, '456789', '2022-04-14', 'DEBIT', 4);
+
+INSERT INTO payment_method (id, billing_address_id, card_number, created_at, payment_type, user_id)
+values (5, 9, '567891', '2022-04-15', 'CREDIT', 5);
+
+
+--PRODUCTS
+INSERT INTO products (id, description, name, price, quantity, user_id )
+VALUES (1, 'It is a transport mechanism', 'Bicycle', 100.00, 14, 3);
+
+INSERT INTO products (id, description, name, price, quantity, user_id  )
+VALUES (2, 'stationery writing object', 'Bicycle', 0.50, 5, 4);

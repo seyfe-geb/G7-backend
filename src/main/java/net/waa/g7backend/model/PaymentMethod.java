@@ -5,9 +5,10 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
-@Table(name ="payment_methods")
+@Table(name ="payment_method")
 @Data
 @RequiredArgsConstructor
 public class PaymentMethod {
@@ -15,28 +16,28 @@ public class PaymentMethod {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
-    private String name;
-
-    @Column(nullable = false)
-    private PaymentMethodType type;
+    @Column(name = "payment_type", nullable = false)
+    private String paymentType;
 
     @Column(nullable = false, unique = true)
-    private String number;
+    private String card_number;
 
-    @Column(nullable = false)
-    private int csv;
+    @Column(name = "created_at")
+    private LocalDate createdAt;
 
-    @Column(name ="is_default")
-    private boolean isDefault;
+    @Column(name = "user_id")
+    private String userId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "user_id", nullable = false)
-    @JsonBackReference
-    private User user;
+    @Column(name = "billing_address_id")
+    private long billingAddressId;
 
-    @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "billing_address.id", nullable = false)
-    @JsonBackReference
-    private Address billingAddress;
+    public PaymentMethod(String paymentType,
+                         String card_number, LocalDate createdAt,
+                         String userId, long billingAddressId) {
+        this.paymentType = paymentType;
+        this.card_number = card_number;
+        this.createdAt = createdAt;
+        this.userId = userId;
+        this.billingAddressId = billingAddressId;
+    }
 }

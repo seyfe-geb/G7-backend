@@ -2,8 +2,11 @@ package net.waa.g7backend.service.implementer;
 
 import lombok.RequiredArgsConstructor;
 import net.waa.g7backend.model.User;
+import net.waa.g7backend.model.dto.AddressDto;
 import net.waa.g7backend.model.dto.UserDto;
+import net.waa.g7backend.repository.AddressRepository;
 import net.waa.g7backend.repository.RoleRepository;
+import net.waa.g7backend.service.interfaces.AddressService;
 import net.waa.g7backend.service.interfaces.UserService;
 import net.waa.g7backend.repository.UserRepository;
 import org.modelmapper.ModelMapper;
@@ -20,6 +23,7 @@ import java.util.stream.Collectors;
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
+    private final AddressService addressService;
     private final ModelMapper modelMapper;
     private final RoleRepository roleRepository;
 
@@ -49,6 +53,11 @@ public class UserServiceImpl implements UserService {
         }
 
         userRepository.save(user);
+        user = userRepository.findUserByUsername(user.getUsername());
+        for(AddressDto ad : dto.getAddresses()){
+            ad.setUserId(user.getId());
+            addressService.add(ad);
+        }
         return dto;
     }
 
@@ -82,11 +91,5 @@ public class UserServiceImpl implements UserService {
     public UserDto addSeller(UserDto dto) {
         return null;
     }
-
-    @Override
-    public void test() {
-        System.out.println("Testing...");
-    }
-
 
 }
