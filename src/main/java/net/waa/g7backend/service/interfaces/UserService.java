@@ -25,6 +25,7 @@ public interface UserService {
 
     UserDto addSeller(UserDto dto);
 
+    void test();
 
 
 

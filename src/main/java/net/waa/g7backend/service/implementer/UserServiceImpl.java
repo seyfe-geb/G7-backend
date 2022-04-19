@@ -9,6 +9,8 @@ import net.waa.g7backend.repository.UserRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -34,7 +36,20 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDto add(UserDto dto) {
-       return null;
+       User user = new User(dto.getFirstName(), dto.getLastName(),
+               dto.getEmail(), dto.getUsername(), dto.getPassword(),
+        true, false,
+        LocalDate.now(), LocalDate.now());
+
+        if (!dto.getAuthorities().isEmpty()) {
+            user.setAuthorities(new HashSet<>(3));
+
+            for (String authority : dto.getAuthorities())
+                user.getAuthorities().add(roleRepository.findByAuthority(authority));
+        }
+
+        userRepository.save(user);
+        return dto;
     }
 
     @Override
@@ -66,6 +81,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDto addSeller(UserDto dto) {
         return null;
+    }
+
+    @Override
+    public void test() {
+        System.out.println("Testing...");
     }
 
 

@@ -1,6 +1,7 @@
 package net.waa.g7backend.service.interfaces;
 
 
+import net.waa.g7backend.model.Role;
 import net.waa.g7backend.model.dto.RoleDto;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +14,7 @@ public interface RoleService {
 
      RoleDto findRoleById(long id);
 
-    RoleDto save(RoleDto dto);
+    Role save(Role dto);
 
     RoleDto updateRoleById(long id, RoleDto dto);
 
